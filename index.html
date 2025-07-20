@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Full Ace Editor Example</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    #editor {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<!-- The editor container -->
+<div id="editor">function hello() {
+  console.log("Hello from Ace Editor!");
+}</div>
+
+<!-- Load Ace Editor from CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.3/ace.min.js"></script>
+<script>
+  // Initialize the editor
+  const editor = ace.edit("editor");
+
+  // Set language mode and theme
+  editor.setTheme("ace/theme/monokai");
+  editor.session.setMode("ace/mode/javascript");
+
+  // Additional options
+  editor.setOptions({
+    fontSize: "14px",
+    showPrintMargin: false,
+    wrap: true,
+    useWorker: false,
+    enableLiveAutocompletion: true,
+    enableSnippets: true,
+    enableBasicAutocompletion: true
+  });
+</script>
+
+</body>
+</html>
